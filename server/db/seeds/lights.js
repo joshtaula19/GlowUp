@@ -4,8 +4,16 @@ export async function seed(knex) {
 
   // Inserts seed entries
   await knex('light').insert([
-    { id: 1, name: 'Bedside Lamp' },
-    { id: 2, name: 'Clamping Desk Lamp' },
-    { id: 3, name: 'Fancy Chandelier' },
+    {
+      id: 1,
+      name: 'Bedside Lamp',
+      description: 'Small lamp, great for reading in bed',
+    },
+    {
+      id: 2,
+      name: 'Clamping Desk Lamp',
+      description: 'A lamp that clamps, perfect for the home office',
+    },
+    { id: 3, name: 'Fancy Chandelier', description: 'Pure opulence' },
   ])
 }
