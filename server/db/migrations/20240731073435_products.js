@@ -7,6 +7,7 @@ export async function up(knex) {
     table.increments('id')
     table.integer('merchant_id')
     table.string('name')
+    table.string('description')
     table.integer('price')
     table.string('status')
     table.string('created_at')
