@@ -10,6 +10,7 @@ export async function seed(knex) {
       description: 'Small lamp, great for reading in bed.',
       status: 'Available',
       price: 39.99,
+      category_id: 1,
     },
     {
       id: 2,
@@ -17,6 +18,7 @@ export async function seed(knex) {
       description: 'A lamp that clamps, perfect for the home office.',
       status: 'Available',
       price: 29.99,
+      category_id: 1,
     },
     {
       id: 3,
@@ -24,6 +26,7 @@ export async function seed(knex) {
       description: 'Pure opulence.',
       status: 'Sold',
       price: 3000,
+      category_id: 3,
     },
     {
       id: 4,
@@ -32,6 +35,7 @@ export async function seed(knex) {
         'Make sure your work site is well lit with this 1000W halogen lamp.',
       status: 'Available',
       price: 54.99,
+      category_id: 4,
     },
     {
       id: 5,
@@ -40,6 +44,7 @@ export async function seed(knex) {
         'Invite ambience into your home with this fully dimmable floor lamp.',
       status: 'Available',
       price: 78.99,
+      category_id: 2,
     },
   ])
 }
