@@ -1,9 +1,9 @@
 export async function seed(knex) {
   // Deletes ALL existing entries
-  await knex('categories').del()
+  await knex('repairs').del()
 
   // Inserts seed entries
-  await knex('categories').insert([
+  await knex('repairs').insert([
     {
       id: 1,
       description:
