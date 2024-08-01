@@ -4,5 +4,6 @@ export interface Lights {
   description: string
   status: boolean
   price: number
+  image_url: string
   category_id: number // foreign key
 }
