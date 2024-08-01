@@ -11,8 +11,7 @@ export async function up(knex) {
     table.integer('price')
     table
       .integer('category_id')
-      .unsigned()
-      .references('id')
+      .references('categories.id')
       .inTable('categories')
   })
 }
