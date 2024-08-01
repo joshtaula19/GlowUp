@@ -9,11 +9,8 @@ export async function up(knex) {
     table.string('description')
     table.boolean('status')
     table.integer('price')
-    table
-      .integer('category_id')
-      .unsigned()
-      .references('id')
-      .inTable('categories')
+    table.string('image_url')
+    table.integer('category_id').references('categories.id').onDelete('CASCADE')
   })
 }
 
