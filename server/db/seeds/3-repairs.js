@@ -9,6 +9,7 @@ export async function seed(knex) {
       description:
         'The black plastic on the power cord is starting to wear away',
       contact_details: 'mylampisbroken@itsdark.com',
+      category_id: 1,
     },
   ])
 }
