@@ -11,9 +11,9 @@ export async function up(knex) {
     table.integer('price')
     table
       .integer('category_id')
-      .unsigned()
-      .references('id')
-      .inTable('categories')
+
+      .references('categories.id')
+      .onDelete('CASCADE')
   })
 }
 

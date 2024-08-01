@@ -7,7 +7,7 @@ export async function up(knex) {
     table.increments('id').primary()
     table.string('description')
     table.string('contact_details')
-    table.integer('category_id')
+    table.integer('category_id').references('categories.id').onDelete('CASCADE')
   })
 }
 
