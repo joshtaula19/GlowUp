@@ -7,3 +7,8 @@ export interface Lights {
   image_url: string
   category_id: number // foreign key
 }
+
+export interface LightsID extends Lights {
+  id: number
+  category_id: number
+}
