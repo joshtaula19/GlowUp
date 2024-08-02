@@ -3,3 +3,7 @@ export interface Categories {
   category_id: number
   category: string
 }
+
+export interface CategoriesID extends Categories {
+  category_id: number
+}
