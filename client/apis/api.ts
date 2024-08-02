@@ -1,6 +1,6 @@
 import request from 'superagent'
 import { useQuery } from '@tanstack/react-query'
-import { Lights, LightsID } from '../../models/lights'
+import { Lights, LightsID, LightsWithCategory } from '../../models/lights'
 // import { Categories } from '../../models/categories'
 // import { Repairs } from '../../models/repairs'
 
@@ -12,6 +12,17 @@ export function useLights() {
     queryFn: async () => {
       const data = await request.get('/api/v1/lights')
       return data.body as Lights[]
+    },
+  })
+}
+
+export function useLightsWithCategories() {
+  return useQuery({
+    queryKey: ['lightsWithCategories'],
+    queryFn: async () => {
+      const response = await fetch('/api/v1/lights/with-categories')
+      const data = await response.json()
+      return data as LightsWithCategory[]
     },
   })
 }
