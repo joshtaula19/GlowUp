@@ -14,6 +14,8 @@ router.get('/', async (req, res) => {
   }
 })
 
+// route to get lights with categories from category table
+
 // Route to get a light by ID
 router.get('/:id', async (req, res, next) => {
   try {
