@@ -16,15 +16,15 @@ export async function getLightsWithCategories() {
   return lightsWithCategories
 }
 
-export async function getRepairsWithCategories() {
-  const repairsWithCategories = await knex('repairs as r')
-    .innerJoin('categories as c', 'r.category_id', 'c.id')
-    .select(
-      'r.id as repair_id',
-      'r.description as repair_description',
-      'r.contact_details as repairs_contact_details',
-      'c.id as category_id',
-      'c.category as category_name',
-    )
-  return repairsWithCategories
-}
+// export async function getRepairsWithCategories() {
+//  const repairsWithCategories = await knex('repairs as r')
+//    .innerJoin('categories as c', 'r.category_id', 'c.id')
+//    .select(
+//      'r.id as repair_id',
+//      'r.description as repair_description',
+//      'r.contact_details as repairs_contact_details',
+//      'c.id as category_id',
+//      'c.category as category_name',
+//   )
+//  return repairsWithCategories
+// }
