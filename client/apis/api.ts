@@ -1,6 +1,7 @@
 import request from 'superagent'
 import { useQuery } from '@tanstack/react-query'
 import { Lights, LightsID } from '../../models/lights'
+import { CartItem } from '../../models/cart'
 // import { Categories } from '../../models/categories'
 // import { Repairs } from '../../models/repairs'
 
@@ -26,6 +27,15 @@ export function useLightDetails(id: number) {
   })
 }
 
+export function useCart() {
+  return useQuery({
+    queryKey: ['cart'],
+    queryFn: async () => {
+      const data = await request.get('/api/v1/cart')
+      return data.body as CartItem[]
+    },
+  })
+}
 // export function useCategory(category_id: number) {
 //   return useQuery({
 //     queryKey: ['category', category_id],
