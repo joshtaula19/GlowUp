@@ -14,6 +14,17 @@ router.get('/', async (req, res) => {
   }
 })
 
+// route to get lights with categories from category table
+router.get('/with-categories', async (req, res) => {
+  try {
+    const data = await db.getLightsWithCategories()
+    res.json(data)
+  } catch (error) {
+    console.log(error)
+    res.status(500).json({ message: 'Something went wrong' })
+  }
+})
+
 // Route to get a light by ID
 router.get('/:id', async (req, res, next) => {
   try {
