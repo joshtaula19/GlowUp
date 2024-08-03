@@ -56,38 +56,75 @@ const LightsList: React.FC = () => {
       >
         {Message && <h1>{Message}</h1>}
       </div>
-      <h1>Lights</h1>
+      <body>
+        <div className="header-container">
+          <Link to="/">
+            <button className="btnHome pill--selected right-side">
+              <h1>Home</h1>
+            </button>
+          </Link>
+          <h1>Lighting</h1>
+          <Link to="/cart">
+            <button className="pill">
+              <h1>View Cart 🛒</h1>
+            </button>
+          </Link>
+        </div>
+      </body>
       <div>
-        <button onClick={() => setSelectedCategory(null)}>All</button>
-        <button onClick={() => setSelectedCategory('Table Lamp')}>
+        <button
+          className="pill pill--selected"
+          onClick={() => setSelectedCategory(null)}
+        >
+          All
+        </button>
+        <button
+          className="pill"
+          onClick={() => setSelectedCategory('Table Lamp')}
+        >
           Table Lamps
         </button>
-        <button onClick={() => setSelectedCategory('Floor Lamp')}>
+        <button
+          className="pill"
+          onClick={() => setSelectedCategory('Floor Lamp')}
+        >
           Floor Lamps
         </button>
-        <button onClick={() => setSelectedCategory('Overhead Lighting')}>
+        <button
+          className="pill"
+          onClick={() => setSelectedCategory('Overhead Lighting')}
+        >
           Overhead Lighting
         </button>
-        <button onClick={() => setSelectedCategory('Industrial')}>
+        <button
+          className="pill"
+          onClick={() => setSelectedCategory('Industrial')}
+        >
           Industrial
         </button>
       </div>
-      <ul>
+      <br></br>
+      <ul className="display">
         {filteredLights?.map((light) => (
           <li key={light.id} style={{ marginBottom: '20px' }}>
             <img
               src={light.image_url}
               alt={light.name}
-              style={{ width: '100px', height: 'auto', display: 'block' }}
+              style={{ width: '300px', height: 'auto', display: 'block' }}
             />
-            <Link to={`/lights/${light.id}`}>
+            <Link className="LightName" to={`/lights/${light.id}`}>
               <h2>{light.name}</h2>
             </Link>
             <p>{light.description}</p>
             <p>Status: {light.status}</p>
             <p>Price: ${light.price.toFixed(2)}</p>
             <p>Category: {light.category_name}</p>
-            <button onClick={() => addToCart(light.id)}>Add to cart +</button>
+            <button
+              className="pill pill--selected"
+              onClick={() => addToCart(light.id)}
+            >
+              Add to cart +
+            </button>
           </li>
         ))}
       </ul>

@@ -2,6 +2,7 @@ import { useLightsWithCategories } from '../apis/api'
 import React, { useState, useEffect } from 'react'
 import request from 'superagent'
 import { Ticket } from '../../models/ticket'
+import { Link } from 'react-router-dom'
 
 const RepairPage = () => {
   const { data, error, isLoading } = useLightsWithCategories()
@@ -60,8 +61,16 @@ const RepairPage = () => {
 
   return (
     <div>
-      <h1>Which item needs repairing?</h1>
-
+      <>
+        <div className="header-container">
+          <h1>Which item needs repairing?</h1>
+          <Link to="/">
+            <button className="btnHome pill--selected right-side">
+              <h1>Home</h1>
+            </button>
+          </Link>
+        </div>
+      </>
       <select
         onChange={(e) => setSelectedLight(Number(e.target.value))}
         value={selectedLight ?? ''}

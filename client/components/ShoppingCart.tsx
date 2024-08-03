@@ -1,6 +1,7 @@
 import { useCart } from '../apis/api'
 import request from 'superagent'
 import { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 
 function ShoppingCart() {
   const { data, error, isLoading } = useCart()
@@ -29,9 +30,15 @@ function ShoppingCart() {
 
   return (
     <div>
-      <h1> My Cart:</h1>
-
-      <ul>
+      <div className="header-container">
+        <h1> My Cart:</h1>
+        <Link to="/">
+          <button className="btnHome pill--selected right-side">
+            <h1>Home</h1>
+          </button>
+        </Link>
+      </div>
+      <ul className="display">
         {data?.map((cart) => (
           <li key={cart.cart_id} style={{ marginBottom: '20px' }}>
             <img
@@ -44,7 +51,10 @@ function ShoppingCart() {
             <p>Status: {cart.status}</p>
             <p>Price: ${cart.price.toFixed(2)}</p>
             <p>Category: {cart.category_name}</p>
-            <button onClick={() => deleteFromCart(cart.light_id)}>
+            <button
+              className="pill pill-red-select"
+              onClick={() => deleteFromCart(cart.light_id)}
+            >
               Remove from cart
             </button>
           </li>
