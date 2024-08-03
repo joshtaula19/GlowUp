@@ -6,6 +6,6 @@ export interface CartItem {
   status: boolean
   price: number
   image_url: string
-  category_id: number
+  category_name: string
   quantity: number
 }

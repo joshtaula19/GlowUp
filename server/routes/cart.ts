@@ -22,10 +22,23 @@ router.post('/', async (req, res) => {
   }
 })
 
+router.delete('/', async (req, res) => {
+  const { light_id } = req.body
+
+  try {
+    const result = await connection('cart').where('light_id', light_id).del()
+    res.status(201).json(result)
+  } catch (error) {
+    console.error(error)
+    throw error
+  }
+})
+
 router.get('/', async (req, res) => {
   try {
     const cartItems = await connection('cart')
       .join('lights', 'cart.light_id', '=', 'lights.id')
+      .join('categories', 'lights.category_id', '=', 'categories.id')
       .select(
         'cart.id as cart_id',
         'lights.id as light_id',
@@ -34,7 +47,8 @@ router.get('/', async (req, res) => {
         'lights.status',
         'lights.price',
         'lights.image_url',
-        'lights.category_id',
+        'categories.id as category_id',
+        'categories.category as category_name',
         'cart.quantity',
       )
 

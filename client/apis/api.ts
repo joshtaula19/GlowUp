@@ -1,6 +1,8 @@
 import request from 'superagent'
 import { useQuery } from '@tanstack/react-query'
 import { Lights, LightsID } from '../../models/lights'
+import { LightsWithCategory } from '../../models/lights'
+import { CartItem } from '../../models/cart'
 // import { Categories } from '../../models/categories'
 // import { Repairs } from '../../models/repairs'
 
