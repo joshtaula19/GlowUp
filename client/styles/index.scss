@@ -4,3 +4,91 @@ html,
 body {
   font-family: 'Montserrat', sans-serif;
 }
+
+.pill {
+  font-size: 12px; 
+  font-family: 'Montserrat', sans-serif; 
+  padding: 0.5em 1em; 
+  margin: 0.25em; 
+  border-radius: 2em; 
+  border: none; 
+  outline: none; 
+  background: #ddd; 
+  cursor: pointer;  
+  top: 50%; 
+  align-content: center; 
+}
+
+.pill:not(.pill--selected):hover {
+  background: #ccc; 
+}
+
+.pill--selected {
+  background: #009578;
+  color: #fff; 
+}
+
+.display {
+  display: grid; 
+  grid-template-columns: repeat(auto-fill, 300px);
+  justify-content: space-around;
+  margin: 0 auto; 
+  row-gap: 20px;
+  column-gap: 1.33%;
+}
+
+a {
+  font-family: sans-serif;
+  text-decoration: none; 
+  color: black; 
+}
+
+
+.btnHome {
+  font-size: 12px; 
+  font-family: 'Montserrat', sans-serif; 
+  padding: 0.5em 1em; 
+  border-radius: 2em; 
+  border: none; 
+  outline: none; 
+  cursor: pointer;   
+}
+
+.header-container {
+  margin: 0; 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.right-side {
+  margin-left: auto; 
+}
+
+.button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.imgDetail { 
+  height: auto; 
+  display: grid; 
+  place-items: center; 
+
+}
+
+.imgDetail img {
+  max-width: 90%;
+  max-height: 90%; 
+  width: auto; 
+  height: auto; 
+}
+
+.pill-red-select {
+  background: #ce2900;
+  color: #fff; 
+}

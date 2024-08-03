@@ -2,20 +2,28 @@ import { Link } from 'react-router-dom'
 
 function HomePage() {
   return (
-    <div>
+    <div className="button-container">
+      <Link to="/">
+        <button className="pill pill--selected">
+          <h1>Home</h1>
+        </button>
+      </Link>
+      <br></br>
       <Link to="/lights">
-        <button>
-          <h1>Lamps list</h1>
+        <button className="pill">
+          <h1>Shop Lamps</h1>
         </button>
       </Link>
+      <br></br>
       <Link to="/repairs">
-        <button>
-          <h1>Repairs page</h1>
+        <button className="pill">
+          <h1>Repair Your Lamp</h1>
         </button>
       </Link>
+      <br></br>
       <Link to="/cart">
-        <button>
-          <h1>Shopping Cart</h1>
+        <button className="pill">
+          <h1>View Shopping Cart </h1>
         </button>
       </Link>
     </div>
