@@ -13,6 +13,11 @@ const LightDetail: React.FC = () => {
   return (
     <div>
       <h1>{data.name}</h1>
+      <img
+        src={data.image_url}
+        alt={data.name}
+        style={{ width: '100px', height: 'auto', display: 'block' }}
+      />
       <p>{data.description}</p>
       <p>Status: {data.status}</p>
       <p>Price: ${data.price}</p>
