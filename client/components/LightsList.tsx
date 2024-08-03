@@ -2,6 +2,7 @@ import React from 'react'
 import { useLightsWithCategories } from '../apis/api'
 import request from 'superagent'
 import { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 
 const LightsList: React.FC = () => {
   const { data, error, isLoading } = useLightsWithCategories()
@@ -79,7 +80,9 @@ const LightsList: React.FC = () => {
               alt={light.name}
               style={{ width: '100px', height: 'auto', display: 'block' }}
             />
-            <h2>{light.name}</h2>
+            <Link to={`/lights/${light.id}`}>
+              <h2>{light.name}</h2>
+            </Link>
             <p>{light.description}</p>
             <p>Status: {light.status}</p>
             <p>Price: ${light.price.toFixed(2)}</p>

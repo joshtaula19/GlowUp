@@ -9,6 +9,7 @@ import HomePage from './components/HomePage'
 import LightsList from './components/LightsList'
 import RepairPage from './components/RepairPage'
 import ShoppingCart from './components/ShoppingCart'
+import LightDetail from './components/LightsDetail'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -17,6 +18,7 @@ const router = createBrowserRouter(
       <Route path="/lights" element={<LightsList />} />
       <Route path="/repairs" element={<RepairPage />} />
       <Route path="/cart" element={<ShoppingCart />} />
+      <Route path="lights/:id" element={<LightDetail />} />
     </Route>,
   ),
 )
