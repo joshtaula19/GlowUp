@@ -39,7 +39,7 @@ const LightDetail: React.FC = () => {
   }
 
   if (isLoading) return <p>Loading...</p>
-  if (error) return <p>Error: {error.message}</p>
+  if (error) return <p>Error: {error}</p>
   if (!data) return <p>No data found</p>
 
   return (
@@ -67,7 +67,7 @@ const LightDetail: React.FC = () => {
         <p>Price: ${data.price}</p>
         <button
           className="pill pill--selected"
-          onClick={() => addToCart(light.id)}
+          onClick={() => addToCart(data.id)}
         >
           Add to cart +
         </button>
