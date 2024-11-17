@@ -3,11 +3,14 @@
  * @returns { Promise<void> }
  */
 export async function up(knex) {
-  await knex.schema.createTable('repairs', (table) => {
+  await knex.schema.createTable('cart', (table) => {
     table.increments('id').primary()
-    table.string('description')
-    table.string('contact_details')
-    table.integer('category_id').references('categories.id').onDelete('CASCADE')
+    table
+      .integer('light_id')
+      .references('id')
+      .inTable('lights')
+      .onDelete('CASCADE')
+    table.integer('quantity').defaultTo(1)
   })
 }
 
@@ -17,5 +20,5 @@ export async function up(knex) {
  */
 
 export async function down(knex) {
-  await knex.schema.dropTable('repairs')
+  await knex.schema.dropTable('cart')
 }

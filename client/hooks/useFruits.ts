@@ -4,24 +4,27 @@ import {
   useQueryClient,
   MutationFunction,
 } from '@tanstack/react-query'
-import { getFruits } from '../apis/fruits.ts'
+import { LightsWithCategory } from '../../models/lights.ts'
+import { useLights, useLightsWithCategories } from '../apis/api.ts'
+import { query } from 'express'
 
 export function useFruits() {
-  const query = useQuery({ queryKey: ['fruits'], queryFn: getFruits })
-  return {
-    ...query,
-    // Extra queries go here e.g. addFruit: useAddFruit()
-  }
+  const query = useQuery({
+    queryKey: ['lightsWithCategories'],
+    queryFn: useLightsWithCategories,
+  })
+
+  return query
 }
 
-export function useFruitsMutation<TData = unknown, TVariables = unknown>(
-  mutationFn: MutationFunction<TData, TVariables>
+export function useLightsMutation<TData = unknown, TVariables = unknown>(
+  mutationFn: MutationFunction<TData, TVariables>,
 ) {
   const queryClient = useQueryClient()
   const mutation = useMutation({
     mutationFn,
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ['fruits'] })
+      queryClient.invalidateQueries({ queryKey: ['lights'] })
     },
   })
 
