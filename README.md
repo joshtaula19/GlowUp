@@ -1,35 +1,46 @@
-# Boilerplate: Fullstack with Sass
+# Description
 
-## Setup
+GlowUp is a web application created for finding and purchasing the most incredible Lamps you have ever seen. This was a fun project created by myself and a team through our studies at Dev Academy Aotearoa, Check it out!
 
-### What's included
+## Sneek Peak
 
-This repo includes:
+![Main Page](screenshots/screen1.png)
+![Shopping Cart](screenshots/screen2.png)
+![Help Center](screenshots/screen3.png)
 
-* a single, simple API endpoint (`/api/v1/fruits`)
-* a single React component (`<App />`)
-* an example database module (`server/db/fruits.js`)
-* an API client module (`client/apis/fruits.js`)
-* configuration for Vitest and testing library
-* configuration for server-side debugging in VS Code
-* configuration for preprocessing Sass
 
-### Installation
+# Prerequisets
 
-#### **From the Github UI**
+Node.js 
+npm 
+git
 
-See the instructions [here](https://docs.github.com/en/free-pro-team@latest/github/creating-cloning-and-archiving-repositories/creating-a-repository-from-a-template) to use Github's feature to create a new repo from a template.
-
-#### **From the command line**
+## Installation
+Cloning the Repository
 
 ```
-git clone https://github.com/dev-academy-challenges/boilerplate-fullstack [your-project-name]
-cd [your-project-name]
-npm install # to install dependencies
-npm run dev # to start the dev server
+# Clone the repository
+git clone https://github.com/joshtaula19/GlowUp.git
+
+# Navigate to the project directory
+cd GlowUp
+
 ```
 
-You can find the server running on [http://localhost:3000](http://localhost:3000) and the client running on [http://localhost:5173](http://localhost:5173).
+# Installing Dependencies 
 
----
-[Provide feedback on this repo](https://docs.google.com/forms/d/e/1FAIpQLSfw4FGdWkLwMLlUaNQ8FtP2CTJdGDUv6Xoxrh19zIrJSkvT4Q/viewform?usp=pp_url&entry.1958421517=boilerplate-fullstack)
+```
+# Install project dependencies
+npm install
+
+```
+
+# Running the Project 
+
+```
+
+# Start the development server
+npm run dev
+
+```
+
