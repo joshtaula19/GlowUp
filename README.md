@@ -24,7 +24,6 @@ git clone https://github.com/joshtaula19/GlowUp.git
 
 # Navigate to the project directory
 cd GlowUp
-
 ```
 
 # Installing Dependencies 
@@ -32,13 +31,11 @@ cd GlowUp
 ```
 # Install project dependencies
 npm install
-
 ```
 
 # Running the Project 
 
 ```
-
 # Start the development server
 npm run dev
 
