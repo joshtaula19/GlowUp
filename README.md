@@ -1,4 +1,8 @@
-# Boilerplate: Fullstack with Sass
+# GlowUP
+
+
+## Description
+GlowUp is a web application created for finding and purchasing the most incredible Lamps you have ever seen. This was a fun project created by myself and a team through our studies at Dev Academy Aotearoa, Check it out! 
 
 ## Setup
 
